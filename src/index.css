@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-white text-ink-800 font-sans;
+  }
+  h1, h2, h3, h4, h5 {
+    @apply font-display tracking-tight text-ink-900;
+  }
+  *:focus-visible {
+    @apply outline-none ring-2 ring-brand-500/70 ring-offset-2 ring-offset-white rounded;
+  }
+  input, select, textarea {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 active:scale-[0.98];
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white px-6 py-3 hover:bg-brand-700 shadow-soft hover:shadow-glow;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-brand-700 px-6 py-3 border border-brand-100 hover:border-brand-300 hover:bg-brand-50;
+  }
+  .btn-ghost {
+    @apply btn text-ink-700 px-4 py-2 hover:bg-ink-900/5;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-brand-50 text-brand-700 px-3 py-1 text-xs font-medium;
+  }
+  .field-label {
+    @apply text-xs font-semibold uppercase tracking-wider text-ink-500;
+  }
+  .input {
+    @apply w-full rounded-xl border border-ink-300/60 bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-ink-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30 focus:outline-none transition;
+  }
+  .surface {
+    @apply bg-white rounded-3xl shadow-soft;
+  }
+  .glass {
+    @apply backdrop-blur-md bg-white/70 border border-white/40;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .mask-fade-r {
+    -webkit-mask-image: linear-gradient(to right, black 80%, transparent);
+            mask-image: linear-gradient(to right, black 80%, transparent);
+  }
+}
